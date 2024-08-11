@@ -1,0 +1,141 @@
+CREATE TABLE jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    company VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+ALTER TABLE jobs
+ADD ubicacion VARCHAR(255) NOT NULL AFTER company;
+ALTER TABLE jobs ADD COLUMN requirements TEXT;
+ALTER TABLE jobs ADD COLUMN benefits TEXT;
+
+
+
+CREATE TABLE favorites (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    job_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (job_id) REFERENCES jobs(id)
+);
+CREATE TABLE articles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+ALTER TABLE articles
+ADD COLUMN image BLOB;
+
+
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    cedula VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+ foto_perfil MEDIUMBLOB,
+    role ENUM('empleado', 'empleador') NOT NULL DEFAULT 'empleado'
+    );
+
+
+
+ALTER TABLE users
+ADD COLUMN foto_perfil BLOB;
+
+
+ALTER TABLE users
+ADD COLUMN hobbies TEXT,
+ADD COLUMN time_spent TEXT,
+ADD COLUMN resume VARCHAR(255),
+ADD COLUMN specialization ENUM('Desarrollo de Software', 'Administración', 'Diseño');
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS empresas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_empresa VARCHAR(100) NOT NULL,
+    descripcion_empresa TEXT,
+    ubicacion_empresa VARCHAR(255),
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    logo MEDIUMBLOB, -- Tipo para almacenar imágenes
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE empresas
+
+ADD COLUMN razon_social VARCHAR(100) NOT NULL,
+ADD COLUMN ruc VARCHAR(20) NOT NULL,
+ADD COLUMN provincia VARCHAR(100) NOT NULL,
+ADD COLUMN canton VARCHAR(100) NOT NULL,
+ADD COLUMN telefono VARCHAR(20) NOT NULL;
+
+
+
+
+
+
+CREATE TABLE empleos (
+    id_empleo INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    empresa VARCHAR(255) NOT NULL,
+    ubicacion VARCHAR(255),
+    fecha_publicacion DATE
+);
+
+CREATE TABLE experiences (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    experience TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE skills (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    skill VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+
+    
+);
+
+
+CREATE TABLE notificaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    empleador_id INT NOT NULL,
+    mensaje TEXT NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    leida TINYINT(1) DEFAULT 0,
+    FOREIGN KEY (empleador_id) REFERENCES users(id)
+);
+
+
+
+jobs 
+
+1	id Primaria	int(11)			No	Ninguna		AUTO_INCREMENT	Cambiar Cambiar	Eliminar Eliminar	
+	2	user_id Índice	int(11)			No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	3	title	varchar(255)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	4	description	text	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	5	company	varchar(255)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	6	ubicacion	varchar(255)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	7	salary	varchar(255)	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	8	employment_type	enum('Administración, Contabilidad y Finanzas', 'T...	utf8mb4_general_ci		No	Ninguna			Cambiar Cambiar	Eliminar Eliminar	
+	9	created_at	timestamp			No	current_timestamp()			Cambiar Cambiar	Eliminar Eliminar	
+	10	job_type	enum('Full-time', 'Part-time', 'Pasantía', 'Freela...	utf8mb4_general_ci		No	Ninguna		

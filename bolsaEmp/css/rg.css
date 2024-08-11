@@ -1,0 +1,59 @@
+/* rg.css */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh;
+    margin: 0;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column; /* Para alinear los botones verticalmente */
+    align-items: center; /* Centra horizontalmente los botones */
+    margin-bottom: 20px; /* Añade espacio entre los botones y el texto */
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    margin: 10px 0; /* Añade espacio entre los botones */
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5555;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons-container button:hover {
+    background-color: #ff4444;
+}
+
+p {
+    text-align: center; /* Centra el texto */
+}
+a{
+
+    color: #ff4444;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #292929;
+    color: #ffffff;
+    resize: vertical; /* Permite ajustar la altura verticalmente */
+    min-height: 150px; /* Altura mínima del textarea */
+    font-family: Arial, sans-serif; /* Mismo tipo de letra que el resto del formulario */
+}
+
+textarea:focus {
+    outline: none; /* Elimina el borde de enfoque por defecto */
+    border-color: #ff5555; /* Cambia el color del borde al enfocar */
+}
+

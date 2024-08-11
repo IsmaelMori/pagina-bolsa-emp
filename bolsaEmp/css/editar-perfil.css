@@ -1,0 +1,91 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #1e1e1e;
+    padding: 40px; /* Ajusta el padding para ocupar más espacio */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 600px; /* Ajusta el ancho para que ocupe más espacio */
+    text-align: left;
+}
+
+h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container label {
+    flex: 1;
+    text-align: left;
+    margin-right: 30px; /* Ajusta el margen según sea necesario */
+}
+
+.input-container input,
+.input-container select {
+    width: calc(100% - 30px);
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #292929;
+    color: #ffffff;
+}
+
+.input-container input[type="file"] {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+input[type="submit"],
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5555;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #ff4444;
+}
+
+button {
+    background-color: #444444;
+    display: flex;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #555555;
+}
+
+button i {
+    margin-right: 5px;
+}

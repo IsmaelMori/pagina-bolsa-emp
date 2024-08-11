@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - MiApp</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Crear Cuenta</h1>
+            <form action="register.php" method="post">
+                <input type="text" name="first_name" placeholder="Nombre" required>
+                <input type="text" name="last_name" placeholder="Apellido" required>
+                <input type="text" name="id_number" placeholder="Cédula" required>
+                <textarea name="resume" placeholder="Currículo" required></textarea>
+                <textarea name="experience" placeholder="Experiencia" required></textarea>
+                <select name="role" required>
+                    <option value="" disabled selected>Selecciona tu rol</option>
+                    <option value="employer">Empleador</option>
+                    <option value="employee">Empleado</option>
+                </select>
+                <input type="text" name="username" placeholder="Nombre de usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

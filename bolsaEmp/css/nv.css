@@ -1,0 +1,104 @@
+/* styles.css */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #1e1e1e;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+    background-color: #ff5555;
+}
+
+.jobs-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+#nuevos-empleos ul, #lista-empleos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#nuevos-empleos li, #lista-empleos li {
+    background-color: #292929;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#nuevos-empleos li h3, #lista-empleos li h3 {
+    margin: 0 0 10px 0;
+}
+
+#nuevos-empleos li p, #lista-empleos li p {
+    margin: 5px 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-container input, .form-container textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #292929;
+    color: #ffffff;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5555;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #ff4444;
+}
+
+.error {
+    color: #ff5555;
+    text-align: center;
+    margin-bottom: 20px;
+}
